@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      h1 {
+      }
+      tool-tip {
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 1rem;
+
+        font-size: 2rem;
+        border-radius: 8px;
+        
+        top: 100%;
+        left: 12.5%;
+
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+      }
+      :has( > tool-tip) {
+        position: relative;
+      } 
+      :has( > tool-tip):hover tool-tip {
+        opacity: 1;
+      }
+    </style>
+    <title>Hi Mario</title>
+  </head>
+  <body>
+    <h1>TOOL TIPO, put the mouse over mario to see the result</h1>
+    <picture>
+      <img
+        src="https://i.pinimg.com/originals/2b/6b/cf/2b6bcf45c8a270d3563dc596bd6ba926.png"
+        alt="mario face"
+        width="200"
+      />
+      <tool-tip role="tooltip">Hola Matthew</tool-tip>
+    </picture>
+  </body>
+</html>
